@@ -5,7 +5,7 @@
     <% @products.each do |product| %>
       <div class="col s4">
         <h4><%= link_to product.name, product, remote: true %></h4>
-        <div id="product_details_<%= product.id %>">
+        <div id="product_details_<%= product.id %>" style="display:none">
           <p id="product_description_<%= product.id %>"><%= product.description %></p>
           <img src="<%= product.image %>" id="product_image_<%= product.id %>"></img>
           <p><%= number_to_currency product.price %></p>
