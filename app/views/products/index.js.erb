@@ -1,5 +1,5 @@
 $(function() {
-  $('.product_name').click(function() {
-    $('.product_description').toggle();
+  $('#product_<%= @product.id %>').click(function() {
+    $('#product_description').toggle();
   });
 });
