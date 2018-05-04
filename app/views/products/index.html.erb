@@ -4,9 +4,12 @@
   <div class="section">
     <% @products.each do |product| %>
       <div class="col s4">
-        <h4 id="product_<%= product.id %>"><%= link_to product.name, product, remote: true %></h4>
-        <p id="product_description_<%= product.id %>"><%= product.description %></p>
-        <p><%= number_to_currency product.price %></p>
+        <h4><%= link_to product.name, product, remote: true %></h4>
+        <div id="product_details_<%= product.id %>">
+          <p id="product_description_<%= product.id %>"><%= product.description %></p>
+          <img src="<%= product.image %>" id="product_image_<%= product.id %>"></img>
+          <p><%= number_to_currency product.price %></p>
+        </div>
         <%= form_for @order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
           <%= f.number_field :quantity, placeholder: "Oops, breaks if you don't add input!" %>
