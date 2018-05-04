@@ -4,7 +4,7 @@
   <% @order_items.each do |item| %>
     <p id="delete_item_<%= item.id %>" ><%= item.product.name %> | Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"}, remote: true %></p>
   <% end %>
-  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+  <%= render ('order_items/cart_total')%>
   <p><%= link_to "Finalize order", finalize_path %></p>
 <% else %>
   <p>Your shopping cart is empty.</p>
