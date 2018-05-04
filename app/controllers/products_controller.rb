@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
-    @product = Product.find(params[:id])
+
     respond_to do |format|
       format.html { render :index }
       format.js
