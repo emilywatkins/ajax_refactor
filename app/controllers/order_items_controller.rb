@@ -3,15 +3,9 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @item = @order.order_items.new(item_params)
-    if @order.save
-      session[:order_id] = @order.id
-      respond_to do |format|
-        format.html { redirect_to products_path }
-        format.js
-      end
-    else
-      render :new
-    end
+    @order.save
+    session[:order_id] = @order.id
+    redirect_to products_path
   end
 
   def update
