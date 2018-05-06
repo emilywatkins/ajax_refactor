@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to '/'
       flash[:notice] = "You've successfully signed up!"
     else
-      redirect_to '/signup'
+      redirect_to '/sign_up'
       flash[:alert] = "There was a problem signing up."
     end
   end
