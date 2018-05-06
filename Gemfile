@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'faker'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
