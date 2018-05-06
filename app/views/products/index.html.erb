@@ -15,6 +15,9 @@
           <%= f.number_field :quantity, placeholder: "Oops, breaks if you don't add input!" %>
           <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
         <% end %>
+
+          <%= link_to "edit", edit_product_path(product) %>
+        
       </div>
     <% end %>
   </div>
