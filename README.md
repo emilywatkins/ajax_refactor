@@ -9,7 +9,7 @@ To set up:
 * Sorry, didn't get around to tests. It mostly works. There might be a few bugs.
 
 
-Ensure that users can't order a negative number of items.
+DONE - Ensure that users can't order a negative number of items.
 Add flash messages for signing up, signing in and signing out.
 Add product validations.
 Add password validations to ensure a user's password is sufficiently complex.
