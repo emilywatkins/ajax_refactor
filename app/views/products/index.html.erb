@@ -16,8 +16,11 @@
           <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
         <% end %>
 
-          <%= link_to "edit", edit_product_path(product) %>
-        
+          <%= link_to "Edit", edit_product_path(product) %> |
+          <%= link_to "Delete", product_path(product),
+                         :data => {:confirm => "You sure?",
+                         :method => "delete"} %>
+
       </div>
     <% end %>
   </div>
