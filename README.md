@@ -1,19 +1,57 @@
-# README
+# Portfolio site
 
-E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up your own admin. If you have questions, I'll be in Bali with no email. Ask someone else.
+#### Rails Unit, exercise in Ruby, Rails, AJAX, refactoring existing project - 5.4.18
 
-To set up:
+#### Emily Watkins
 
-* `rake db:setup`
+## Description
 
-* Sorry, didn't get around to tests. It mostly works. There might be a few bugs.
+Simple e-commerce site
+
+## Setup
+
+rails 5.0.2
+ruby 2.4.1
+
+Clone this repository:
+
+`$ bundle install`
+`$ rails s`
+
+Create database on local computer
+
+`$ rails db:create`
+
+Navigate to http://localhost:3000/
+
+## Existing functionality
+* User authentication and admin authorization - bcrypt
+* Admin functionality only shown to admin, regardless if non-admin site user is logged in or not
+* Basic e-commerce functionality - view products, add to cart, view cart, edit cart, finalize order.
 
 
-DONE - Ensure that users can't order a negative number of items.
-Add flash messages for signing up, signing in and signing out.
-Add product validations.
-Add password validations to ensure a user's password is sufficiently complex.
-Fix the row height for products, which can quickly become uneven.
-Add product update and delete functionality for admins.
-Add admin flash messages for adding, updating and deleting products.
-Add admin links to navbar so admins can easily add, update and delete products.
+## Refactored functionality
+* AJAX implementation for adding items to cart and updating cart quantity in navbar, hide and show product details on click, remove from cart functionality.
+* Validations for user and product models
+* Some testing for those validations - rspec/shoulda matchers
+* Order item validation to ensure product quantity is greater than 0
+* Flash messages for signing up, signing in, signing out, and for admin CRUD
+* Simple password validation for setting minimum password length
+* CRUD functionality for admin, links hidden to users not logged in as admin
+
+
+## Technologies Used
+
+* Ruby
+* Rails
+* PostgreSQL
+* rspec and shoulda matchers for testing
+* bcrypt for auth and auth
+* AJAX
+* Materialize
+
+## License
+
+Licensed under the MIT License.
+
+Copyright (c) 2018 Emily Watkins
