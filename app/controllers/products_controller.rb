@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authorize, except: [:index, :show, :edit, :update, :destroy]
+  # before_filter :authorize, except: [:index, :show, :edit, :update, :destroy, :new]
 
   def index
     @products = Product.all
@@ -21,12 +21,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      respond_to do |format|
-        format.html { redirect_to '/' }
-        format.js
-      end
+      redirect_to '/'
+      flash[:notice] = "Product successfully added."
     else
       render :new
+      flash[:notice] = "Something went wrong, try again"
     end
   end
 
@@ -39,8 +38,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to products_path
+      flash[:notice] = "Product successfully updated."
     else
       render :edit
+      flash[:notice] = "Something went wrong, try again"
     end
   end
 
@@ -48,6 +49,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
+    flash[:notice] = "Product successfully removed"
   end
 
   private
